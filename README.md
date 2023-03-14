@@ -1,0 +1,2 @@
+# easyword
+EasyWord
