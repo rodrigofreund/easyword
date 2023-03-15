@@ -1,30 +1,21 @@
 package br.com.rodrigofreund.easyword.view;
 
-final class MainView extends ApplicationFrame {
+import javax.swing.JButton;
+import javax.swing.JLabel;
 
-	private static final long serialVersionUID = 1277419340819287945L;
+class MainView extends AbstractView {
+	
+	
+	public MainView() {
+		super();
 
-	private static MainView instance;
-	
-	private final String title;
-	
-	static {
-		instance = new MainView();
+		JLabel helloLabel = new JLabel("Hello!");
+		JButton openSearchViewButton = new JButton("Open");
+		openSearchViewButton.addActionListener((action) -> {
+			MainFrame.getInstance().search();
+		});
+		addComponent(helloLabel);
+		addComponent(openSearchViewButton);
 	}
-	
-	private MainView() {
-		title = "EasyWord";
-	}
-	
-	public static MainView getInstance() {
-		instance.setTitle(instance.title);
-		instance.setSize(300, 200);
-		instance.setLocationByPlatform(true);
-		return instance;
-	}
-	
-	@Override
-	public void start() {
-		instance.setVisible(true);
-	}
+
 }

@@ -10,14 +10,14 @@ public final class ViewService {
 	
 	private static ViewService instance;
 	
-	private ApplicationFrame mainView;
+	private AbstractFrame mainFrame;
 	
 	static {
 		instance = new ViewService();
 	}
 	
 	private ViewService() {
-		mainView = MainView.getInstance();
+		mainFrame = MainFrame.getInstance();
 	}
 	
 	public static ViewService getInstance() {
@@ -25,6 +25,10 @@ public final class ViewService {
 	}
 
 	public void open() {
-		mainView.start();
+		mainFrame.start();
+	}
+	
+	public void search() {
+		mainFrame.search();
 	}
 }
