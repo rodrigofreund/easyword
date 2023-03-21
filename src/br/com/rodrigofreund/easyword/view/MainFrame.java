@@ -1,10 +1,6 @@
 package br.com.rodrigofreund.easyword.view;
 
-import javax.swing.JFrame;
-
 final class MainFrame extends AbstractFrame {
-
-	private static final long serialVersionUID = 1277419340819287945L;
 
 	private static AbstractFrame instance;
 	
