@@ -6,10 +6,8 @@ final class MainFrame extends AbstractFrame {
 	
 	private static FrameState state;
 	
-	private final String title;
-	
 	private MainFrame() {
-		title = "EasyWord";
+		super("EasyWord");
 		state = FrameState.START;
 	}
 	

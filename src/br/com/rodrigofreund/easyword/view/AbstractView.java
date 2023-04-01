@@ -15,5 +15,18 @@ abstract class AbstractView {
 	void addComponent(Component comp) {
 		panel.add(comp);
 	}
+	
+	void open() {
+		panel.setVisible(true);
+	}
+	
+	void close() {
+		panel.setVisible(false);
+	}
+	
+	Component getWindow() {
+		return this.panel;
+	}
+	
 
 }
