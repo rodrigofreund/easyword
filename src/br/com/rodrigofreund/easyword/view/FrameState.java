@@ -1,5 +1,8 @@
 package br.com.rodrigofreund.easyword.view;
 
+import br.com.rodrigofreund.easyword.model.event.EventManager;
+import br.com.rodrigofreund.easyword.model.event.EventType;
+
 enum FrameState {
 
     CLOSE {
@@ -11,7 +14,6 @@ enum FrameState {
 
         @Override
         public void doAction() {
-
         }
 
         @Override
@@ -28,7 +30,6 @@ enum FrameState {
 
         @Override
         public void doAction() {
-
             instance.changeView(new SearchView());
         }
 
@@ -52,6 +53,7 @@ enum FrameState {
         public void doAction() {
             instance = MainFrame.getInstance();
             instance.changeView(new MainView());
+            EventManager.instance().notify(EventType.START_APP);
         }
     };
 

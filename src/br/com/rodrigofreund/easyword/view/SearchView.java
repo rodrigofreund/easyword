@@ -5,8 +5,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import br.com.rodrigofreund.easyword.model.event.EventManager;
+import br.com.rodrigofreund.easyword.model.event.EventParamFactory;
 import br.com.rodrigofreund.easyword.model.event.EventType;
-import br.com.rodrigofreund.easyword.model.event.TextParam;
 
 class SearchView extends AbstractView {
 	
@@ -17,7 +17,7 @@ class SearchView extends AbstractView {
 		JTextField searchTextField = new JTextField(10);
 		JButton openSearchViewButton = new JButton("Search");
 		openSearchViewButton.addActionListener((action) -> {
-			EventManager.instance().notify(EventType.SEARCH_BUTTON_ACTION, new TextParam(searchTextField.getText()));
+			EventManager.instance().notify(EventType.SEARCH_WORD, EventParamFactory.of(searchTextField.getText()));
 		});
 		
 		addComponent(helloLabel);

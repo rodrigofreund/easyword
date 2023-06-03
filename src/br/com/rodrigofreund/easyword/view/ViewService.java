@@ -7,28 +7,28 @@ package br.com.rodrigofreund.easyword.view;
  * https://refactoring.guru/design-patterns/state/java/example
  */
 public final class ViewService {
-	
-	private static ViewService instance;
-	
-	private AbstractFrame mainFrame;
-	
-	static {
-		instance = new ViewService();
-	}
-	
-	private ViewService() {
-		mainFrame = MainFrame.getInstance();
-	}
-	
-	public static ViewService getInstance() {
-		return instance;
-	}
 
-	public void open() {
-		mainFrame.start();
-	}
-	
-	public void search() {
-		mainFrame.search();
-	}
+    private static ViewService instance;
+
+    private AbstractFrame mainFrame;
+
+    static {
+        instance = new ViewService();
+    }
+
+    private ViewService() {
+        mainFrame = MainFrame.getInstance();
+    }
+
+    public static ViewService getInstance() {
+        return instance;
+    }
+
+    public void open() {
+        mainFrame.start();
+    }
+
+    public void search() {
+        mainFrame.search();
+    }
 }
