@@ -13,6 +13,7 @@ public final class Application {
         });
 
         EventManager.instance().subscribe(EventType.SEARCH_WORD, (data) -> {
+            //search in database thought the passed word
             System.out.println(data.getValue().toString());
         });
 
